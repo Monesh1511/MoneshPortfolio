@@ -16,7 +16,7 @@ const education = {
   degree: "Bachelor of Engineering - Computer Science",
   specialization: "Specialization in AI & ML",
   period: "2024 - 2028",
-  location: "Kanchipuram, Tamil Nadu",
+  location: "Chennai, Tamil Nadu",
 };
 
 const Experience = () => {
