@@ -6,25 +6,29 @@ const projects = [
     title: "License Plate Recognition",
     category: "Computer Vision, Python",
     description: "Built a computer vision system to detect and recognize vehicle license plates using OpenCV and Python with preprocessing, contour-based plate detection, and OCR.",
-    color: "from-orange-200 to-amber-100",
+    image: "/src/assets/license-plate-recognition.jpg",
+    //color: "from-slate-300 to-slate-100",
   },
   {
     title: "Diabetic Detection",
     category: "Machine Learning, Healthcare",
     description: "Developed a machine learning model to predict diabetes based on patient health data using scikit-learn and pandas.",
-    color: "from-rose-200 to-pink-100",
+    image: "/src/assets/diabetic-detection.jpg",
+    //color: "from-rose-200 to-pink-100",
   },
   {
     title: "Spam Detection",
     category: "NLP, Classification",
     description: "Implemented a text classification model to identify spam messages using NLP techniques and machine learning.",
-    color: "from-blue-200 to-indigo-100",
+    image: "/src/assets/spam-detection.jpg",
+   // color: "from-blue-200 to-indigo-100",
   },
   {
     title: "Bus Ticket Booking System",
     category: "Java, MySQL",
     description: "Created a Java-based backend application for bus ticket booking with MySQL database integration.",
-    color: "from-emerald-200 to-teal-100",
+    image: "/src/assets/bus-ticket-booking.jpg",
+    //color: "from-emerald-200 to-teal-100",
   },
 ];
 
@@ -52,9 +56,16 @@ const Projects = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               className="group relative overflow-hidden rounded-2xl bg-card border border-border hover:shadow-xl transition-all duration-300"
             >
-              {/* Gradient background */}
-              <div className={`h-48 md:h-56 bg-gradient-to-br ${project.color} p-6 flex items-end`}>
-                <div className="w-16 h-16 bg-background/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
+              {/* Image background */}
+              <div className="relative h-48 md:h-56 overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={`${project.title} screenshot`}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" 
+                  loading="lazy"
+                />
+                {/*<div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-80`} />*/}
+                <div className="absolute bottom-4 left-4 w-16 h-16 bg-background/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                   <span className="text-2xl font-bold text-foreground/80">0{index + 1}</span>
                 </div>
               </div>
