@@ -1,33 +1,36 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
-
+import licensePlateImage from "../assets/license-plate-recognition.jpg";
+import diabeticDetectionImage from "../assets/diabetic-detection.jpg";
+import spamDetectionImage from "../assets/spam-detection.jpg";
+import busTicketBookingImage from "../assets/bus-ticket-booking.jpg";
 const projects = [
   {
     title: "License Plate Recognition",
     category: "Computer Vision, Python",
     description: "Built a computer vision system to detect and recognize vehicle license plates using OpenCV and Python with preprocessing, contour-based plate detection, and OCR.",
-    image: "/src/assets/license-plate-recognition.jpg",
+    image: licensePlateImage,
     //color: "from-slate-300 to-slate-100",
   },
   {
     title: "Diabetic Detection",
     category: "Machine Learning, Healthcare",
     description: "Developed a machine learning model to predict diabetes based on patient health data using scikit-learn and pandas.",
-    image: "/src/assets/diabetic-detection.jpg",
+    image: diabeticDetectionImage,
     //color: "from-rose-200 to-pink-100",
   },
   {
     title: "Spam Detection",
     category: "NLP, Classification",
     description: "Implemented a text classification model to identify spam messages using NLP techniques and machine learning.",
-    image: "/src/assets/spam-detection.jpg",
+    image: spamDetectionImage,
    // color: "from-blue-200 to-indigo-100",
   },
   {
     title: "Bus Ticket Booking System",
     category: "Java, MySQL",
     description: "Created a Java-based backend application for bus ticket booking with MySQL database integration.",
-    image: "/src/assets/bus-ticket-booking.jpg",
+    image: busTicketBookingImage,
     //color: "from-emerald-200 to-teal-100",
   },
 ];
