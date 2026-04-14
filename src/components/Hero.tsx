@@ -1,96 +1,123 @@
 import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
 
 const Hero = () => {
   return (
-    <section id="home" className="min-h-screen hero-gradient relative overflow-hidden pt-20">
-      {/* Peach glow effect */}
-      <div className="absolute inset-0 peach-glow opacity-60 pointer-events-none" />
-      
-      <div className="container mx-auto px-6 py-16 md:py-24 relative z-10">
-        <div className="flex flex-col items-center text-center">
-          {/* Script greeting */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="font-display italic text-4xl md:text-6xl text-foreground mb-6"
-          >
-            Hey, there
-          </motion.p>
+    <section id="home" className="relative mesh-bg overflow-hidden pt-28 pb-16 md:pt-32 md:pb-24 grain-overlay">
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
+          <div>
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center gap-2 pill bg-primary/10 text-primary mb-6"
+            >
+              <Sparkles className="w-4 h-4" />
+              Open to internships and cool builds
+            </motion.p>
 
-          {/* Profile Image */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="font-display text-5xl sm:text-6xl lg:text-7xl leading-[0.96] text-foreground"
+            >
+              Monesh D
+              <span className="block font-body text-lg sm:text-xl lg:text-2xl font-semibold mt-5 text-muted-foreground tracking-wide">
+                ML Engineer + React Developer building practical, human-first products
+              </span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.2 }}
+              className="mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-muted-foreground"
+            >
+              Currently working with <strong className="text-foreground">ML, React, CSS, FastAPI, Java, and Spring Boot</strong>. I enjoy solving LeetCode problems daily,
+              learning DSA deeply, and turning ideas into reliable products.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="mt-8 flex flex-wrap gap-3"
+            >
+              <a href="#projects" className="px-7 py-3 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity">
+                Explore My Projects
+              </a>
+              <a
+                href="/Monesh%20Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-7 py-3 rounded-full border border-border text-sm font-semibold hover:border-foreground hover:text-foreground transition-colors"
+              >
+                View / Download Resume
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="mt-8 flex flex-wrap gap-3"
+            >
+              <a
+                href="https://leetcode.com/u/Monesh1511/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm font-semibold text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+              >
+                LeetCode
+              </a>
+              <a
+                href="https://github.com/Monesh1511"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm font-semibold text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-border text-sm font-semibold text-muted-foreground hover:text-foreground hover:border-foreground transition-colors"
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
+              <a
+                href="mailto:moneshdhanasekaren@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Monesh%2C%0A%0AI%20would%20like%20to%20connect%20regarding..."
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
+              >
+                <Mail className="w-4 h-4" />
+                Contact
+              </a>
+            </motion.div>
+          </div>
+
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, scale: 0.96, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="relative w-64 h-64 md:w-80 md:h-80 mb-8"
+            className="justify-self-center w-full max-w-lg"
           >
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-peach to-peach-glow blur-2xl opacity-50" />
-            <img
-              src={profileImage}
-              alt="Monesh D"
-              className="relative w-full h-full object-cover rounded-full shadow-2xl"
-            />
-          </motion.div>
-
-          {/* Availability badge */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="flex items-center gap-2 mb-6"
-          >
-            <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            <span className="text-sm text-muted-foreground">Available for new opportunities</span>
-          </motion.div>
-
-          {/* Main headline */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-col md:flex-row items-center gap-4 md:gap-8 mb-6"
-          >
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground">
-              I AM<br className="md:hidden" /> MONESH
-            </h1>
-            <div className="text-left">
-              <p className="text-lg md:text-xl font-semibold text-foreground">AI & ML</p>
-              <p className="text-lg md:text-xl font-semibold text-foreground">ENGINEER</p>
+            <div className="relative rounded-[2rem] overflow-hidden border border-border/70 shadow-2xl bg-card">
+              <img
+                src={profileImage}
+                alt="Monesh D"
+                className="w-full h-[420px] sm:h-[520px] object-cover"
+              />
+              <div className="absolute left-4 right-4 bottom-4 glass-card p-4">
+                <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground"></p>
+                <p className="mt-2 text-sm sm:text-base font-semibold text-foreground">Focused on getting better, not perfect!!</p>
+              </div>
             </div>
-          </motion.div>
-
-          {/* Description */}
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="max-w-md text-muted-foreground mb-8"
-          >
-            Specialized in Machine Learning, Computer Vision, and Backend Development.
-            Building intelligent solutions that work in the real world.
-          </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.9 }}
-            className="flex flex-col sm:flex-row gap-4"
-          >
-            <a
-              href="#projects"
-              className="px-8 py-3 border border-foreground text-foreground rounded-full font-medium hover:bg-foreground hover:text-background transition-all"
-            >
-              View Projects
-            </a>
-            <a
-              href="#contact"
-              className="px-8 py-3 border border-foreground text-foreground rounded-full font-medium hover:bg-foreground hover:text-background transition-all"
-            >
-              Get in Touch
-            </a>
           </motion.div>
         </div>
       </div>
