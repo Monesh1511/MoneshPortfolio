@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { CONTACT_GMAIL_COMPOSE_URL } from "@/lib/contact";
 
 const navLinks = [
   { href: "#home", label: "Home" },
@@ -7,7 +8,7 @@ const navLinks = [
   { href: "#skills", label: "Stack" },
   { href: "#experience", label: "Journey" },
   {
-    href: "mailto:moneshdhanasekaren@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Monesh%2C%0A%0AI%20would%20like%20to%20connect%20regarding...",
+    href: CONTACT_GMAIL_COMPOSE_URL,
     label: "Contact",
   },
 ];
@@ -31,6 +32,8 @@ const Header = () => {
             <li key={link.href}>
               <a
                 href={link.href}
+                target={link.label === "Contact" ? "_blank" : undefined}
+                rel={link.label === "Contact" ? "noopener noreferrer" : undefined}
                 className="text-sm font-semibold text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}

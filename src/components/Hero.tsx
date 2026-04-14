@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, Linkedin, Mail, Sparkles } from "lucide-react";
 import profileImage from "@/assets/profile.jpg";
+import { CONTACT_GMAIL_COMPOSE_URL } from "@/lib/contact";
 
 const Hero = () => {
   return (
@@ -92,7 +93,9 @@ const Hero = () => {
                 LinkedIn
               </a>
               <a
-                href="mailto:moneshdhanasekaren@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Monesh%2C%0A%0AI%20would%20like%20to%20connect%20regarding..."
+                href={CONTACT_GMAIL_COMPOSE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-semibold hover:opacity-90 transition-opacity"
               >
                 <Mail className="w-4 h-4" />

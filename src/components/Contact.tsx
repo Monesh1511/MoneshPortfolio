@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail, MapPin, Github, Linkedin, HeartHandshake } from "lucide-react";
+import { CONTACT_GMAIL_COMPOSE_URL } from "@/lib/contact";
 
 const Contact = () => {
   return (
@@ -23,7 +24,9 @@ const Contact = () => {
           </p>
 
           <a
-            href="mailto:moneshdhanasekaren@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Monesh%2C%0A%0AI%20would%20like%20to%20connect%20regarding..."
+            href={CONTACT_GMAIL_COMPOSE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-4 bg-primary-foreground text-primary rounded-full text-lg font-semibold hover:opacity-90 transition-opacity mb-10"
           >
             <Mail className="w-5 h-5" />
