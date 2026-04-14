@@ -6,7 +6,7 @@ import diabeticDetectionImage from "../assets/diabetic-detection.jpg";
 import spamDetectionImage from "../assets/spam-detection.jpg";
 import busTicketBookingImage from "../assets/bus-ticket-booking.jpg";
 import profileImage from "../assets/EasyNutro.png";
-import vehitraxImage from "../assets/vehitrax-ai.jpg";
+import vehitraxImage from "../assets/Vehitrax-AI.jpg";
 
 const projects = [
   {
