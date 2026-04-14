@@ -1,31 +1,33 @@
 import { motion } from "framer-motion";
+import { Brain, Coffee, Dumbbell, Film, HeartHandshake, Trophy } from "lucide-react";
 
-const services = [
+const focusAreas = [
   {
-    number: "01",
-    title: "Machine Learning",
-    description: "Building predictive models using Python, scikit-learn, and deep learning frameworks for real-world applications.",
+    icon: Brain,
+    title: "Machine Learning Systems",
+    description: "From preprocessing to deployment, I build ML features that are explainable, testable, and production-ready.",
   },
   {
-    number: "02",
-    title: "Computer Vision",
-    description: "Developing image recognition and processing systems using OpenCV, NumPy, and advanced CV techniques.",
+    icon: Trophy,
+    title: "Problem Solving",
+    description: "I regularly solve LeetCode challenges and sharpen my Data Structures and Algorithms fundamentals.",
   },
   {
-    number: "03",
-    title: "Backend Development",
-    description: "Creating robust server-side applications with Java, databases, and API integrations.",
+    icon: Coffee,
+    title: "Full-Stack Delivery",
+    description: "Building modern frontends with React + CSS and backend APIs using FastAPI, Java, and Spring Boot.",
   },
-  {
-    number: "04",
-    title: "Data Analysis",
-    description: "Analyzing complex datasets using Pandas, Matplotlib, and SQL to derive actionable insights.",
-  },
+];
+
+const personality = [
+  { icon: Dumbbell, text: "Gym consistency for 4+ years" },
+  { icon: Film, text: "Cinema lover and visual storyteller" },
+  { icon: HeartHandshake, text: "Spreading love and kindness" },
 ];
 
 const Services = () => {
   return (
-    <section className="py-24 gradient-bg">
+    <section id="about" className="py-24">
       <div className="container mx-auto px-6">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -34,26 +36,63 @@ const Services = () => {
           transition={{ duration: 0.6 }}
           className="section-heading"
         >
-          I CAN HELP YOU WITH
+          ABOUT ME
         </motion.h2>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.number}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="relative pt-12 border-t border-border"
-            >
-              <span className="absolute top-0 left-0 -translate-y-1/2 text-6xl font-bold text-muted/50 font-display italic">
-                {service.number}
-              </span>
-              <h3 className="text-lg font-semibold text-foreground mb-3">{service.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{service.description}</p>
-            </motion.div>
-          ))}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+          className="max-w-3xl mx-auto text-center"
+        >
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+            I am an AI and ML focused Computer Science student who likes building products that solve real user problems,
+            not just demo ideas. My mindset is simple: stay curious, stay disciplined, and keep improving every week.
+          </p>
+        </motion.div>
+
+        <div className="mt-14 grid md:grid-cols-3 gap-6">
+          {focusAreas.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.12 }}
+                className="glass-card p-6"
+              >
+                <div className="w-11 h-11 rounded-xl bg-accent/15 text-accent grid place-items-center mb-4">
+                  <Icon className="w-5 h-5" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <div className="mt-8 grid sm:grid-cols-3 gap-4">
+          {personality.map((item, index) => {
+            const Icon = item.icon;
+
+            return (
+              <motion.div
+                key={item.text}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="rounded-2xl border border-border bg-card/70 p-4 text-sm font-medium text-foreground flex items-center justify-center gap-2"
+              >
+                <Icon className="w-4 h-4 text-accent" />
+                {item.text}
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

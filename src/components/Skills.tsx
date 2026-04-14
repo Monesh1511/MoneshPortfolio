@@ -1,37 +1,40 @@
 import { motion } from "framer-motion";
 
 const skills = {
-  languages: ["Python", "Java", "SQL"],
-  libraries: ["Pandas", "NumPy", "scikit-learn", "OpenCV", "Matplotlib", "EasyOCR"],
-  tools: ["Git", "GitHub", "VS Code", "Eclipse", "MySQL Workbench"],
+  core: ["Machine Learning", "React", "CSS", "FastAPI", "Java", "Spring Boot", "Python", "SQL"],
+  mlAndData: ["scikit-learn", "Pandas", "NumPy", "OpenCV", "Matplotlib", "EasyOCR", "YOLO"],
+  devTools: ["Git", "GitHub", "VS Code", "Postman", "MySQL Workbench"],
 };
 
 const stats = [
-  { value: "4+", label: "Projects Completed" },
+  { value: "7+", label: "Projects Built" },
   { value: "1", label: "Internship" },
-  { value: "3+", label: "Programming Languages" },
-  { value: "2024", label: "Started Journey" },
+  { value: "300+", label: "LeetCode Problems Goal" },
+  { value: "Daily", label: "DSA Practice" },
 ];
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-24 bg-background">
+    <section id="skills" className="py-24">
       <div className="container mx-auto px-6">
-        {/* Stats Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-24"
+          className="mb-16"
         >
-          <div className="flex flex-col lg:flex-row items-start lg:items-center gap-12">
-            <div className="lg:w-1/2">
-              <h2 className="text-2xl md:text-3xl font-semibold text-foreground mb-4">
-                Crafting intelligent solutions for real-world problems.
+          <div className="glass-card p-8 lg:p-10 grid lg:grid-cols-[1fr_1.1fr] gap-10 items-center">
+            <div>
+              <h2 className="font-display text-4xl md:text-5xl text-foreground leading-tight">
+                Stack, Skills, and What I&apos;m Learning Next
               </h2>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                I like balancing product execution with algorithmic thinking. That means building end-to-end apps and also getting stronger with DSA every week.
+              </p>
             </div>
-            <div className="lg:w-1/2 grid grid-cols-2 gap-8">
+
+            <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (
                 <motion.div
                   key={stat.label}
@@ -40,43 +43,30 @@ const Skills = () => {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                 >
-                  <p className="text-4xl md:text-5xl font-bold text-foreground">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+                  <p className="text-3xl md:text-4xl font-extrabold text-foreground">{stat.value}</p>
+                  <p className="text-xs sm:text-sm uppercase tracking-wide text-muted-foreground mt-1">{stat.label}</p>
                 </motion.div>
               ))}
             </div>
           </div>
         </motion.div>
 
-        {/* Skills Heading */}
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="section-heading"
-        >
-          SKILLS & TOOLS
-        </motion.h2>
-
-        {/* Skills Grid */}
-        <div className="space-y-8">
-          {/* Languages */}
+        <div className="space-y-8 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="flex flex-col md:flex-row md:items-center gap-4 pb-8 border-b border-border"
+            className="glass-card p-6"
           >
-            <div className="md:w-48 flex-shrink-0">
-              <h3 className="text-lg font-semibold text-foreground">Languages</h3>
+            <div className="md:w-48 flex-shrink-0 mb-3 md:mb-0">
+              <h3 className="text-lg font-semibold text-foreground">Core Stack</h3>
             </div>
             <div className="flex flex-wrap gap-3">
-              {skills.languages.map((skill) => (
+              {skills.core.map((skill) => (
                 <span
                   key={skill}
-                  className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
+                  className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-semibold"
                 >
                   {skill}
                 </span>
@@ -84,19 +74,18 @@ const Skills = () => {
             </div>
           </motion.div>
 
-          {/* Libraries */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="flex flex-col md:flex-row md:items-center gap-4 pb-8 border-b border-border"
+            className="glass-card p-6"
           >
-            <div className="md:w-48 flex-shrink-0">
-              <h3 className="text-lg font-semibold text-foreground">Libraries</h3>
+            <div className="md:w-48 flex-shrink-0 mb-3 md:mb-0">
+              <h3 className="text-lg font-semibold text-foreground">Python Libraries</h3>
             </div>
             <div className="flex flex-wrap gap-3">
-              {skills.libraries.map((skill) => (
+              {skills.mlAndData.map((skill) => (
                 <span
                   key={skill}
                   className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
@@ -107,19 +96,18 @@ const Skills = () => {
             </div>
           </motion.div>
 
-          {/* Tools */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="flex flex-col md:flex-row md:items-center gap-4"
+            className="glass-card p-6"
           >
-            <div className="md:w-48 flex-shrink-0">
-              <h3 className="text-lg font-semibold text-foreground">Tools</h3>
+            <div className="md:w-48 flex-shrink-0 mb-3 md:mb-0">
+              <h3 className="text-lg font-semibold text-foreground">Tools and Workflow</h3>
             </div>
             <div className="flex flex-wrap gap-3">
-              {skills.tools.map((skill) => (
+              {skills.devTools.map((skill) => (
                 <span
                   key={skill}
                   className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
@@ -128,6 +116,19 @@ const Skills = () => {
                 </span>
               ))}
             </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="rounded-2xl border border-dashed border-border bg-card/60 p-6 text-center"
+          >
+            <p className="text-sm text-muted-foreground uppercase tracking-[0.16em]">Current Learning Sprint</p>
+            <p className="mt-2 text-base sm:text-lg font-semibold text-foreground">
+              Advanced DSA patterns, Spring Boot architecture, and high-performance FastAPI integration.
+            </p>
           </motion.div>
         </div>
       </div>
