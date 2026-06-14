@@ -2,11 +2,11 @@ import { motion } from "framer-motion";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import { useState } from "react";
 import licensePlateImage from "../assets/license-plate-recognition.jpg";
-import diabeticDetectionImage from "../assets/diabetic-detection.jpg";
 import spamDetectionImage from "../assets/spam-detection.jpg";
 import busTicketBookingImage from "../assets/bus-ticket-booking.jpg";
 import profileImage from "../assets/EasyNutro.png";
 import vehitraxImage from "../assets/Vehitrax-AI.jpg";
+import findme from "../assets/findme.png";
 
 const projects = [
   {
@@ -22,7 +22,8 @@ const projects = [
     category: "Java, MySQL",
     description: "Created a Java-based backend application for bus ticket booking with MySQL database integration.",
     image: busTicketBookingImage,
-    status: "Completed",
+    status: "Live Repository",
+    link: "https://github.com/Monesh1511/BusTicketBooking-withDB",
   },
   {
     title: "EasyNutro",
@@ -32,19 +33,14 @@ const projects = [
     status: "Currently Building",
   },
   {
-    title: "SkillSprint Tracker",
-    category: "React, CSS, DSA",
-    description: "A clean performance dashboard to track LeetCode streaks, DSA topic mastery, and weekly learning goals with visual progress analytics.",
-    image: diabeticDetectionImage,
+    title: "Find Me",
+    category: "Flutter,Python,postgreSQL",
+    description: "Find Me is a college lost-and-found application that helps students report, search, and recover lost items easily. It provides a centralized platform where users can post lost or found belongings and connect directly with the concerned person, making item recovery faster and more organized.",
+    image: findme,
     status: "In Progress",
+    link: "https://github.com/Monesh1511/Find-me-",
   },
-  {
-    title: "Smart Transit API Suite",
-    category: "Java, Spring Boot, FastAPI",
-    description: "Microservice-ready backend combining Spring Boot core services and FastAPI ML endpoints for fare prediction, route optimization, and seat demand forecasting.",
-    image: busTicketBookingImage,
-    status: "Architecture Phase",
-  },
+  
 ];
 
 const miniProjects = [
@@ -54,13 +50,15 @@ const miniProjects = [
     description: "Built a computer vision system to detect and recognize vehicle license plates using OpenCV and Python with preprocessing, contour-based plate detection, and OCR.",
     image: licensePlateImage,
     status: "Completed",
+    link: "https://github.com/Monesh1511/ML-Projects",
   },
   {
     title: "Diabetic Detection",
     category: "Machine Learning, Healthcare",
     description: "Developed a machine learning model to predict diabetes based on patient health data using scikit-learn and pandas.",
-    image: diabeticDetectionImage,
+    image: findme,
     status: "Model Improved",
+    link: "https://github.com/Monesh1511/ML-Projects",
   },
   {
     title: "Spam Detection",
@@ -68,7 +66,10 @@ const miniProjects = [
     description: "Implemented a text classification model to identify spam messages using NLP techniques and machine learning.",
     image: spamDetectionImage,
     status: "Completed",
+    link: "https://github.com/Monesh1511/ML-Projects",
+    
   },
+  
 ];
 
 const Projects = () => {
@@ -156,8 +157,22 @@ const Projects = () => {
                   <h3 className="text-xl font-semibold text-foreground mb-1 leading-tight">Mini Projects</h3>
                   <p className="text-xs font-semibold uppercase tracking-wide text-accent">{activeMiniProject.category}</p>
                 </div>
-                <div className="flex items-center gap-1 rounded-full border border-border px-2 py-1 text-[11px] font-semibold text-muted-foreground">
-                  {activeMiniProjectIndex + 1}/{miniProjects.length}
+                <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-1 rounded-full border border-border px-2 py-1 text-[11px] font-semibold text-muted-foreground">
+                    {activeMiniProjectIndex + 1}/{miniProjects.length}
+                  </div>
+                  {activeMiniProject.link ? (
+                    <a
+                      href={activeMiniProject.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 rounded-full border border-border px-3 py-1 text-[11px] font-semibold text-foreground transition-all hover:bg-primary hover:text-primary-foreground hover:border-primary"
+                      aria-label={`View ${activeMiniProject.title} repository`}
+                    >
+                      <ArrowUpRight className="w-3 h-3" />
+                      Repo
+                    </a>
+                  ) : null}
                 </div>
               </div>
               <h4 className="text-base font-semibold text-foreground mb-2">{activeMiniProject.title}</h4>
@@ -200,10 +215,11 @@ const Projects = () => {
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2 rounded-full border border-border group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all"
+                      className="flex items-center gap-1 rounded-full border border-border px-3 py-1 text-[11px] font-semibold text-foreground transition-all group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary"
                       aria-label={`View ${project.title}`}
                     >
                       <ArrowUpRight className="w-4 h-4" />
+                      Repo
                     </a>
                   ) : (
                     <button className="p-2 rounded-full border border-border group-hover:bg-primary group-hover:text-primary-foreground group-hover:border-primary transition-all" aria-label={`View ${project.title}`}>
