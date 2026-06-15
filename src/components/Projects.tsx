@@ -7,6 +7,7 @@ import busTicketBookingImage from "../assets/bus-ticket-booking.jpg";
 import profileImage from "../assets/EasyNutro.png";
 import vehitraxImage from "../assets/Vehitrax-AI.jpg";
 import findme from "../assets/findme.png";
+import top50 from "../assets/top50.png";
 
 const projects = [
   {
@@ -39,6 +40,14 @@ const projects = [
     image: findme,
     status: "In Progress",
     link: "https://github.com/Monesh1511/Find-me-",
+  },
+  {
+    title: "Top 50 Product based Companies Guide",
+    category: "html, css, js",
+    description: "An interactive single-page HTML dashboard listing the top 50 product-based companies for software engineering freshers, with interview difficulty, salary ranges, fresher hiring frequency, key skills, FAANG+ insights, tier rankings, and a preparation roadmap..",
+    image: top50,
+    status: "Deployed",
+    link: "https://top50productbasedcompanies.vercel.app/",
   },
   
 ];
@@ -170,7 +179,7 @@ const Projects = () => {
                       aria-label={`View ${activeMiniProject.title} repository`}
                     >
                       <ArrowUpRight className="w-3 h-3" />
-                      Repo
+                        Repo
                     </a>
                   ) : null}
                 </div>
